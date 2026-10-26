@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="D'Anjung Tailor's Enterprise di Sibu, Sarawak — tempahan jahitan custom-made, fitting dan alteration untuk pakaian wanita dan lelaki.">
+  <title>D'Anjung Tailor's Enterprise | Jahitan & Alteration Sibu</title>
+  <link rel="icon" href="assets/web/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          purple: { DEFAULT:'#2D152F', dark:'#1C0C1E', light:'#421E45', soft:'#59295D' },
+          cream: { DEFAULT:'#FAF7F2', dark:'#F0EAE1', soft:'#FFFDF9' },
+          gold: { DEFAULT:'#D4AF37', hover:'#C5A028' }
+        },
+        fontFamily: { serif:['"Playfair Display"','serif'], sans:['"Plus Jakarta Sans"','sans-serif'] },
+        boxShadow: { soft:'0 14px 40px rgba(28,12,30,.10)' }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html{scroll-behavior:smooth}.page-view{display:none}.page-view.active{display:block}
+    .nav-link.active{color:#D4AF37}.photo-card img{transition:transform .6s ease}.photo-card:hover img{transform:scale(1.035)}
+    #page-gallery .gallery-photo{box-shadow:none;border:0;background:transparent}
+    #page-gallery .gallery-photo img{display:block;transition:opacity .25s ease}
+    #page-gallery .gallery-photo:hover img{opacity:.96}
+    details summary::-webkit-details-marker{display:none}details[open] .faq-chevron{transform:rotate(180deg)}
+    .faq-chevron{transition:transform .2s ease}.hero-vignette{background:linear-gradient(90deg,#1C0C1E 0%,rgba(28,12,30,.97) 36%,rgba(28,12,30,.80) 56%,rgba(28,12,30,.22) 100%)}
+    *,*::before,*::after{box-sizing:border-box} body{overflow-x:hidden} img{max-width:100%} input,select,textarea,button,a{min-width:0}
+    @media(max-width:767px){
+      .hero-vignette{background:linear-gradient(180deg,rgba(28,12,30,.16) 0%,rgba(28,12,30,.40) 35%,rgba(28,12,30,.92) 74%,#1C0C1E 100%)}
+      #mobile-menu{max-height:calc(100vh - 76px);overflow-y:auto}
+      #page-services details > div > div.flex{align-items:flex-start;gap:.25rem}
+      #page-contact .divide-y > div{gap:.75rem}
+    }
+    @media(max-width:520px){
+      #page-services details > div > div.flex{flex-direction:column}
+      #page-services details > div > div.flex b{white-space:normal}
+      #page-contact .divide-y > div{flex-wrap:wrap}
+      #page-contact .divide-y > div b{text-align:right;margin-left:auto}
+      details summary{line-height:1.35}
+    }
+    @media(max-width:360px){
+      header .font-serif{text-transform:none;letter-spacing:.02em}
+    }
+  </style>
+</head>
+<body class="bg-cream text-purple font-sans min-h-screen flex flex-col antialiased">
+<header class="sticky top-0 z-50 bg-purple-dark/95 backdrop-blur text-cream border-b border-cream/10 shadow-md">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 h-[76px] flex items-center justify-between">
+    <a href="#" onclick="switchPage('home');return false" class="flex items-center gap-3 group">
+      <img src="assets/web/logo.webp" alt="Logo D'Anjung Tailor's" class="w-11 h-11 rounded-full object-cover ring-1 ring-gold/50 group-hover:scale-105 transition">
+      <div><span class="font-serif text-base sm:text-lg uppercase tracking-wider font-semibold block leading-none">D’Anjung Tailor’s</span><span class="text-[9px] sm:text-[10px] tracking-[.22em] uppercase text-gold mt-1.5 block">Enterprise • Sibu</span></div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[11px] uppercase tracking-[.15em] font-semibold">
+      <a data-page="home" href="#" onclick="switchPage('home');return false" class="nav-link active hover:text-gold transition">Utama</a>
+      <a data-page="about" href="#" onclick="switchPage('about');return false" class="nav-link text-cream/75 hover:text-gold transition">Tentang Kami</a>
+      <a data-page="services" href="#" onclick="switchPage('services');return false" class="nav-link text-cream/75 hover:text-gold transition">Perkhidmatan & Harga</a>
+      <a data-page="gallery" href="#" onclick="switchPage('gallery');return false" class="nav-link text-cream/75 hover:text-gold transition">Galeri & FAQ</a>
+      <a data-page="contact" href="#" onclick="switchPage('contact');return false" class="nav-link text-cream/75 hover:text-gold transition">Hubungi</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-2.5">
+      <a href="https://wa.me/60167173657" target="_blank" rel="noopener" class="border border-cream/25 px-4 py-2.5 text-[10px] uppercase tracking-widest font-semibold hover:bg-cream hover:text-purple transition"><i class="fab fa-whatsapp mr-1.5"></i>WhatsApp</a>
+      <a href="#" onclick="switchPage('contact');return false" class="bg-gold text-purple px-4 py-2.5 text-[10px] uppercase tracking-widest font-bold hover:bg-gold-hover transition">Temujanji</a>
+    </div>
+    <button aria-label="Buka menu" class="lg:hidden text-xl p-2" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden px-6 pb-6 pt-2 border-t border-cream/10 bg-purple-dark space-y-3 text-sm">
+    <a href="#" onclick="switchPage('home');toggleMobileMenu();return false" class="block py-1.5">Utama</a>
+    <a href="#" onclick="switchPage('about');toggleMobileMenu();return false" class="block py-1.5">Tentang Kami</a>
+    <a href="#" onclick="switchPage('services');toggleMobileMenu();return false" class="block py-1.5">Perkhidmatan & Harga</a>
+    <a href="#" onclick="switchPage('gallery');toggleMobileMenu();return false" class="block py-1.5">Galeri & FAQ</a>
+    <a href="#" onclick="switchPage('contact');toggleMobileMenu();return false" class="block py-1.5">Hubungi Kami</a>
+    <a href="https://wa.me/60167173657" target="_blank" rel="noopener" class="block text-center bg-gold text-purple font-bold py-3 mt-3">Hubungi WhatsApp</a>
+  </div>
+</header>
+
+<main class="flex-grow">
+<section id="page-home" class="page-view active">
+  <div class="relative min-h-[720px] sm:min-h-[760px] md:min-h-[86vh] overflow-hidden bg-purple-dark flex items-end md:items-center">
+    <img src="assets/web/hero.webp" alt="Gaun lace putih hasil jahitan D'Anjung Tailor's" class="absolute inset-0 w-full h-full object-cover object-[72%_40%] sm:object-[70%_40%] md:object-[72%_42%]" fetchpriority="high">
+    <div class="hero-vignette absolute inset-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24 w-full grid md:grid-cols-12">
+      <div class="md:col-span-7 lg:col-span-6 max-w-2xl">
+        <span class="text-[11px] sm:text-xs uppercase tracking-[.32em] text-gold font-bold">Tailoring • Fitting • Alteration</span>
+        <h1 class="font-serif text-[2.55rem] min-[390px]:text-5xl sm:text-6xl lg:text-[72px] leading-[1.06] text-cream mt-5 tracking-tight">Jahitan yang<br><span class="italic font-medium">dibuat</span> untuk anda.</h1>
+        <p class="text-cream/80 text-sm sm:text-base leading-7 mt-6 max-w-xl">Pakaian custom-made dengan perhatian pada ukuran, keselesaan dan kemasan — untuk pelanggan di Sibu, Sarawak.</p>
+        <div class="mt-8 grid grid-cols-1 min-[430px]:grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+          <a href="https://wa.me/60167173657?text=Saya%20ingin%20minta%20quotation%20jahitan" target="_blank" rel="noopener" class="w-full sm:w-auto text-center bg-gold text-purple font-bold text-[11px] uppercase tracking-widest px-6 sm:px-8 py-4 hover:bg-gold-hover transition shadow-lg"><i class="fab fa-whatsapp mr-2"></i>Minta Quotation</a>
+          <a href="#" onclick="switchPage('services');return false" class="w-full sm:w-auto text-center border border-cream/40 text-cream font-semibold text-[11px] uppercase tracking-widest px-6 sm:px-8 py-4 hover:bg-cream hover:text-purple transition">Lihat Perkhidmatan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-purple text-cream py-16 sm:py-20 px-6 border-y border-cream/10">
+    <div class="max-w-3xl mx-auto text-center"><p class="text-gold uppercase tracking-[.25em] text-[10px] font-bold">Falsafah Jahitan Kami</p><h2 class="font-serif text-2xl sm:text-3xl mt-3">Kemas pada jahitan, tepat pada ukuran.</h2><p class="text-cream/75 text-sm leading-7 mt-5 max-w-2xl mx-auto">Kami percaya setiap helaian kain mempunyai keunikan tersendiri. Melalui jahitan yang teliti, fabrik anda dibentuk menjadi pakaian yang selesa, anggun dan padan mengikut citarasa serta bentuk badan.</p></div>
+  </div>
+
+  <div class="py-20 sm:py-24 px-6 bg-cream">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto"><p class="text-purple/55 uppercase tracking-[.22em] text-[10px] font-bold">Hasil Kerja Utama</p><h2 class="font-serif text-3xl sm:text-4xl mt-3">Koleksi & Perkhidmatan Jahitan</h2></div>
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mt-11">
+        <article onclick="switchPage('services')" class="photo-card cursor-pointer bg-cream-soft border border-purple/10 shadow-soft overflow-hidden"><div class="h-[300px] sm:h-[360px] overflow-hidden"><img src="assets/web/baju_kurung.webp" alt="Baju Kurung" class="w-full h-full object-cover"></div><div class="p-6"><h3 class="font-serif text-xl font-semibold">Tempahan Pakaian Wanita</h3><p class="text-sm text-purple/65 leading-6 mt-2">Baju Kurung, Kurung Moden, Kebaya, Jubah dan blouse mengikut ukuran.</p></div></article>
+        <article onclick="switchPage('services')" class="photo-card cursor-pointer bg-cream-soft border border-purple/10 shadow-soft overflow-hidden"><div class="h-[300px] sm:h-[360px] overflow-hidden"><img src="assets/web/baju_melayu.webp" alt="Baju Melayu bercorak" class="w-full h-full object-cover"></div><div class="p-6"><h3 class="font-serif text-xl font-semibold">Tempahan Pakaian Lelaki</h3><p class="text-sm text-purple/65 leading-6 mt-2">Baju Melayu, kemeja dan pakaian khas dengan potongan kemas dan selesa.</p></div></article>
+        <article onclick="switchPage('services')" class="photo-card cursor-pointer bg-cream-soft border border-purple/10 shadow-soft overflow-hidden"><div class="h-[300px] sm:h-[360px] overflow-hidden"><img src="assets/web/custom_made.webp" alt="Pakaian custom-made" class="w-full h-full object-cover"></div><div class="p-6"><h3 class="font-serif text-xl font-semibold">Custom-Made & Alteration</h3><p class="text-sm text-purple/65 leading-6 mt-2">Pembaikan, kecilkan saiz, tukar zip, pendekkan pakaian dan kemasan khas.</p></div></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-purple-light text-cream py-14 px-6"><div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-6 md:items-center md:justify-between"><div><p class="text-gold text-[10px] uppercase tracking-[.22em] font-bold">Sedia untuk bermula?</p><h3 class="font-serif text-2xl sm:text-3xl mt-2">Buat temujanji fitting anda.</h3><p class="text-cream/70 text-sm mt-2">Pilih masa, simpan ke Google Calendar dan sahkan dengan kami melalui WhatsApp.</p></div><a href="#" onclick="switchPage('contact');return false" class="shrink-0 bg-cream text-purple font-bold text-[11px] uppercase tracking-widest px-7 py-4 hover:bg-gold transition text-center">Buka Temujanji</a></div></div>
+</section>
+
+<section id="page-about" class="page-view">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div><p class="text-gold uppercase tracking-[.24em] text-[10px] font-bold">Tentang Kami</p><h1 class="font-serif text-4xl sm:text-5xl mt-4 leading-tight">D’Anjung Tailor’s Enterprise</h1><p class="text-purple/70 leading-7 text-sm mt-6">D’Anjung Tailor’s Enterprise merupakan perkhidmatan jahitan yang mengutamakan kualiti, kekemasan dan kepuasan pelanggan. Kami menerima tempahan jahitan serta alteration mengikut citarasa dan ukuran pelanggan.</p><p class="text-purple/70 leading-7 text-sm mt-4">Dengan sentuhan jahitan yang teliti dan kemasan premium, kami komited menghasilkan pakaian yang selesa, bergaya dan sesuai untuk pelbagai majlis di Sibu, Sarawak.</p></div>
+      <div class="grid grid-cols-5 gap-3 sm:gap-4"><div class="col-span-3 h-[300px] sm:h-[420px] overflow-hidden"><img src="assets/web/shop_front.webp" alt="Kedai D'Anjung Tailor's di Sibu" class="w-full h-full object-cover"></div><div class="col-span-2 h-[300px] sm:h-[420px] overflow-hidden mt-6 sm:mt-10"><img src="assets/web/kurung_moden.webp" alt="Kurung moden" class="w-full h-full object-cover"></div></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-px bg-cream/10 mt-16 bg-purple rounded-2xl overflow-hidden text-cream shadow-soft">
+      <div class="p-8"><i class="fas fa-medal text-gold text-2xl"></i><h3 class="font-serif text-xl mt-4">Kualiti Kemasan</h3><p class="text-cream/65 text-sm leading-6 mt-2">Setiap garisan jahitan dipastikan kemas, kukuh dan sesuai dengan fabrik.</p></div>
+      <div class="p-8"><i class="fas fa-ruler-combined text-gold text-2xl"></i><h3 class="font-serif text-xl mt-4">Ukuran Tepat</h3><p class="text-cream/65 text-sm leading-6 mt-2">Padanan pakaian diberi perhatian supaya selesa dan seimbang pada badan.</p></div>
+      <div class="p-8"><i class="fas fa-comments text-gold text-2xl"></i><h3 class="font-serif text-xl mt-4">Mesra Pelanggan</h3><p class="text-cream/65 text-sm leading-6 mt-2">Bincang rekaan melalui WhatsApp atau sesi fitting bersemuka di kedai.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="page-services" class="page-view">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
+    <div class="text-center max-w-3xl mx-auto"><p class="text-gold uppercase tracking-[.24em] text-[10px] font-bold">Perkhidmatan</p><h1 class="font-serif text-4xl sm:text-5xl mt-3">Jahitan Custom & Alteration</h1><p class="text-purple/65 text-sm leading-7 mt-4">Harga jahitan custom-made dan tempoh siap bergantung pada jenis pakaian, design serta jumlah tempahan. Hubungi kami untuk quotation tepat.</p></div>
+    <div class="mt-10 bg-purple text-cream p-6 sm:p-8 flex flex-col sm:flex-row gap-5 sm:items-center sm:justify-between"><div><h2 class="font-serif text-xl text-gold">Tempahan Custom-Made</h2><p class="text-cream/70 text-sm mt-1">Hantar gambar/design anda melalui WhatsApp untuk semakan.</p></div><a href="https://wa.me/60167173657?text=Saya%20ingin%20mendapatkan%20quotation%20jahitan" target="_blank" rel="noopener" class="bg-gold text-purple font-bold text-[11px] uppercase tracking-widest px-6 py-3.5 text-center"><i class="fab fa-whatsapp mr-2"></i>Dapatkan Quotation</a></div>
+    <div class="grid lg:grid-cols-12 gap-10 mt-12 items-start">
+      <div class="lg:col-span-4 space-y-5"><img src="assets/web/baju_kebaya.webp" alt="Baju Kebaya" class="w-full h-[320px] sm:h-[430px] object-cover shadow-soft"><img src="assets/web/kurung_moden.webp" alt="Kurung moden" class="w-full h-[260px] sm:h-[310px] object-cover shadow-soft"></div>
+      <div class="lg:col-span-8 space-y-3">
+        <h2 class="font-serif text-2xl mb-5">Senarai Harga Alteration</h2>
+        <details open class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 flex justify-between font-bold"><span>Full Alteration</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 pb-5 text-sm text-purple/75 space-y-3"><div class="flex justify-between gap-5 border-t pt-3"><span>Full Alteration Baju — kecil sisi, pendek lengan, pendek baju, kemas bentuk</span><b class="text-purple whitespace-nowrap">RM25</b></div><div class="flex justify-between gap-5 border-t pt-3"><span>Full Alteration Seluar — potong, kecil pinggang, kecil kaki, kemas bentuk</span><b class="text-purple whitespace-nowrap">RM25</b></div></div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 flex justify-between font-bold"><span>Alterations Seluar</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 pb-5 text-sm text-purple/75 divide-y"> <div class="py-3 flex justify-between"><span>Potong seluar biasa</span><b>RM6</b></div><div class="py-3 flex justify-between"><span>Potong + jahit kaki jeans</span><b>RM10</b></div><div class="py-3 flex justify-between"><span>Kecilkan pinggang</span><b>RM12–RM15</b></div><div class="py-3 flex justify-between"><span>Kecilkan peha / kaki</span><b>RM12–RM18</b></div><div class="py-3 flex justify-between"><span>Pasang zip baru</span><b>RM10–RM15</b></div><div class="py-3 flex justify-between"><span>Tukar getah seluar</span><b>RM8–RM12</b></div></div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 flex justify-between font-bold"><span>Alterations Baju / Shirt</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 pb-5 text-sm text-purple/75 divide-y"><div class="py-3 flex justify-between"><span>Kecilkan sisi</span><b>RM10–RM15</b></div><div class="py-3 flex justify-between"><span>Pendekkan lengan</span><b>RM6–RM10</b></div><div class="py-3 flex justify-between"><span>Pendekkan baju</span><b>RM8–RM12</b></div><div class="py-3 flex justify-between"><span>Pasang butang (satu)</span><b>RM1–RM2</b></div><div class="py-3 flex justify-between"><span>Betulkan koyak kecil</span><b>RM3–RM8</b></div></div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 flex justify-between font-bold"><span>Alterations Baju Wanita / Blouse</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 pb-5 text-sm text-purple/75 divide-y"><div class="py-3 flex justify-between"><span>Kecilkan sisi (wanita)</span><b>RM12–RM18</b></div><div class="py-3 flex justify-between"><span>Pendekkan baju / blouse</span><b>RM8–RM12</b></div><div class="py-3 flex justify-between"><span>Pendekkan lengan</span><b>RM8–RM12</b></div><div class="py-3 flex justify-between"><span>Pasang zip baru</span><b>RM15–RM20</b></div><div class="py-3 flex justify-between"><span>Betulkan zip belakang</span><b>RM12–RM18</b></div></div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 flex justify-between font-bold"><span>Alterations Kurung / Jubah</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 pb-5 text-sm text-purple/75 divide-y"><div class="py-3 flex justify-between"><span>Kecilkan kurung moden</span><b>RM15–RM20</b></div><div class="py-3 flex justify-between"><span>Kecilkan jubah</span><b>RM15–RM22</b></div><div class="py-3 flex justify-between"><span>Pendekkan kain</span><b>RM10–RM15</b></div><div class="py-3 flex justify-between"><span>Adjust pinggang kain</span><b>RM10–RM15</b></div><div class="py-3 flex justify-between"><span>Pasang zip kain</span><b>RM12–RM18</b></div></div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 flex justify-between font-bold"><span>Kerja Khas</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 pb-5 text-sm text-purple/75 divide-y"><div class="py-3 flex justify-between"><span>Tampal koyak besar</span><b>RM10–RM20</b></div><div class="py-3 flex justify-between"><span>Fabrik susah (jeans, velvet, chiffon)</span><b>+RM2–RM5</b></div></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="page-gallery" class="page-view">
+  <div class="max-w-7xl mx-auto px-4 min-[390px]:px-5 sm:px-6 py-14 sm:py-20 space-y-14 sm:space-y-20">
+    <div class="gallery-section">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="text-gold uppercase tracking-[.24em] text-[10px] font-bold">Portfolio</p>
+        <h1 class="font-serif text-4xl sm:text-5xl mt-3">Galeri Hasil Jahitan</h1>
+        <p class="text-purple/65 text-sm leading-6 mt-4 max-w-xl mx-auto">Pilihan hasil jahitan dan kemasan D’Anjung Tailor’s, dipersembahkan dengan susun atur yang ringkas dan kemas.</p>
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-14 sm:mt-20 space-y-14 sm:space-y-20 lg:space-y-24">
+        <!-- Featured landscape image -->
+        <figure class="gallery-photo max-w-4xl mx-auto">
+          <div class="aspect-[16/10] overflow-hidden bg-cream-soft">
+            <img src="assets/web/gallery/galeri2.webp" alt="Hasil kraftangan tekstil bercorak D'Anjung Tailor's" class="w-full h-full object-cover" loading="lazy">
+          </div>
+        </figure>
+
+        <!-- Portrait gallery: generous spacing, two columns only on larger screens -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-14 sm:gap-y-16 lg:gap-y-20 items-start">
+          <figure class="gallery-photo w-full max-w-[430px] mx-auto">
+            <div class="aspect-[4/5] overflow-hidden bg-cream-soft">
+              <img src="assets/web/gallery/galeri1.webp" alt="Hasil kraftangan fabrik tradisional merah dan emas D'Anjung Tailor's" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          </figure>
+
+          <figure class="gallery-photo w-full max-w-[430px] mx-auto">
+            <div class="aspect-[4/5] overflow-hidden bg-cream-soft">
+              <img src="assets/web/gallery/galeri3.webp" alt="Busana tradisional hijau dan ungu dengan kemasan sulaman" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          </figure>
+
+          <figure class="gallery-photo w-full max-w-[430px] mx-auto">
+            <div class="aspect-[4/5] overflow-hidden bg-cream-soft">
+              <img src="assets/web/gallery/galeri4.webp" alt="Busana tradisional merah jambu dan emas" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          </figure>
+
+          <figure class="gallery-photo w-full max-w-[430px] mx-auto">
+            <div class="aspect-[4/5] overflow-hidden bg-cream-soft">
+              <img src="assets/web/gallery/galeri5.webp" alt="Baju kurung bercorak merah jambu dengan kemasan tradisional" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          </figure>
+
+          <figure class="gallery-photo w-full max-w-[430px] mx-auto">
+            <div class="aspect-[4/5] overflow-hidden bg-cream-soft">
+              <img src="assets/web/gallery/galeri6.webp" alt="Blouse floral lembut dengan kemasan bunga" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          </figure>
+
+          <figure class="gallery-photo w-full max-w-[430px] mx-auto">
+            <div class="aspect-[4/5] overflow-hidden bg-cream-soft">
+              <img src="assets/web/gallery/galeri7.webp" alt="Busana hitam dan emas berinspirasikan tradisional" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="bg-purple text-cream p-4 min-[390px]:p-5 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl border border-cream/10 overflow-hidden">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12 space-y-2 px-1">
+        <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-gold">HOW IT WORKS</span>
+        <h2 class="font-serif text-[1.75rem] sm:text-4xl leading-tight font-normal text-cream">Proses tempahan yang mudah</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 lg:gap-6">
+        <div class="bg-purple-dark/60 p-5 sm:p-6 rounded-xl border border-cream/15 flex flex-col items-start transition hover:border-gold/50 min-w-0">
+          <div class="w-12 h-12 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-4">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <span class="text-gold font-bold text-xs uppercase tracking-widest block mb-1">01</span>
+          <h3 class="font-serif text-lg font-semibold text-cream mb-2">WhatsApp / Enquiry</h3>
+          <p class="text-cream/70 text-[13px] sm:text-xs leading-6 sm:leading-relaxed font-light">Hubungi kami untuk mulakan pertanyaan atau hantar gambar contoh rekaan.</p>
+        </div>
+
+        <div class="bg-purple-dark/60 p-5 sm:p-6 rounded-xl border border-cream/15 flex flex-col items-start transition hover:border-gold/50 min-w-0">
+          <div class="w-12 h-12 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-4">
+            <i class="fas fa-pencil-ruler"></i>
+          </div>
+          <span class="text-gold font-bold text-xs uppercase tracking-widest block mb-1">02</span>
+          <h3 class="font-serif text-lg font-semibold text-cream mb-2">Design &amp; Harga</h3>
+          <p class="text-cream/70 text-[13px] sm:text-xs leading-6 sm:leading-relaxed font-light">Bincang design, jenis fabrik, perincian dan sebut harga (quotation).</p>
+        </div>
+
+        <div class="bg-purple-dark/60 p-5 sm:p-6 rounded-xl border border-cream/15 flex flex-col items-start transition hover:border-gold/50 min-w-0">
+          <div class="w-12 h-12 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-4">
+            <i class="fas fa-ruler-combined"></i>
+          </div>
+          <span class="text-gold font-bold text-xs uppercase tracking-widest block mb-1">03</span>
+          <h3 class="font-serif text-lg font-semibold text-cream mb-2">Ukuran / Fitting</h3>
+          <p class="text-cream/70 text-[13px] sm:text-xs leading-6 sm:leading-relaxed font-light">Ambil ukuran di kedai atau semak spesifikasi ukuran yang diberikan.</p>
+        </div>
+
+        <div class="bg-purple-dark/60 p-5 sm:p-6 rounded-xl border border-cream/15 flex flex-col items-start transition hover:border-gold/50 min-w-0">
+          <div class="w-12 h-12 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-4">
+            <i class="fas fa-cut"></i>
+          </div>
+          <span class="text-gold font-bold text-xs uppercase tracking-widest block mb-1">04</span>
+          <h3 class="font-serif text-lg font-semibold text-cream mb-2">Proses Jahitan</h3>
+          <p class="text-cream/70 text-[13px] sm:text-xs leading-6 sm:leading-relaxed font-light">Pemotongan kain dan pemprosesan jahitan disiapkan mengikut spesifikasi.</p>
+        </div>
+
+        <div class="bg-purple-dark/60 p-5 sm:p-6 rounded-xl border border-cream/15 flex flex-col items-start transition hover:border-gold/50 min-w-0">
+          <div class="w-12 h-12 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-4">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <span class="text-gold font-bold text-xs uppercase tracking-widest block mb-1">05</span>
+          <h3 class="font-serif text-lg font-semibold text-cream mb-2">Fitting Akhir</h3>
+          <p class="text-cream/70 text-[13px] sm:text-xs leading-6 sm:leading-relaxed font-light">Semakan akhir untuk memastikan keselesaan, kelengkapan saiz dan fit.</p>
+        </div>
+
+        <div class="bg-purple-dark/60 p-5 sm:p-6 rounded-xl border border-cream/15 flex flex-col items-start transition hover:border-gold/50 min-w-0">
+          <div class="w-12 h-12 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-4">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <span class="text-gold font-bold text-xs uppercase tracking-widest block mb-1">06</span>
+          <h3 class="font-serif text-lg font-semibold text-cream mb-2">Siap &amp; Serahan</h3>
+          <p class="text-cream/70 text-[13px] sm:text-xs leading-6 sm:leading-relaxed font-light">Pakaian yang siap digosok kemas sedia untuk diserahkan kepada pelanggan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center"><p class="text-gold uppercase tracking-[.24em] text-[10px] font-bold">Maklumat Penting</p><h2 class="font-serif text-3xl sm:text-4xl mt-3">Soalan Lazim (FAQ)</h2></div>
+      <div class="mt-9 space-y-3">
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Berapa harga jahitan?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Harga jahitan custom-made bergantung kepada jenis pakaian, design dan jumlah tempahan. WhatsApp kami untuk quotation tepat. Harga alteration adalah berdasarkan senarai harga yang dipaparkan.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Baju apa yang boleh ditempah?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Kami menerima Baju Kurung, Kurung Moden, Kebaya, Baju Melayu, Kemeja, pakaian custom-made serta pelbagai jenis alteration.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Berapa lama tempoh siap?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Tempoh siap bergantung kepada jenis pakaian, design dan jumlah tempahan. Hubungi kami untuk anggaran tarikh siap berdasarkan slot semasa.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Perlu datang untuk ukur atau boleh beri ukuran sendiri?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Anda boleh datang ke kedai untuk sesi ukuran/fitting atau memberikan ukuran sendiri sekiranya berada di luar kawasan.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Perlu appointment untuk fitting?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Temujanji digalakkan supaya kami dapat menyediakan masa untuk sesi fitting. Anda boleh pilih tarikh pada halaman Hubungi Kami dan sahkan slot melalui WhatsApp.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Boleh hantar gambar/design untuk dibuat?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Boleh. Hantar gambar atau rujukan design melalui WhatsApp. Kami akan bincang kesesuaian fabrik, potongan dan anggaran harga.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Boleh buat alteration?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Ya. Antaranya potong seluar, kecilkan pinggang atau sisi, pendekkan lengan/baju, tukar zip, tukar getah dan pembaikan koyak.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Di mana lokasi kedai?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Dalam Taman Tasik Permai, berhadapan Masjid Sibu, Jalan Permai, Pekan Sibu, 96000 Sibu, Sarawak.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Bila kedai buka?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Isnin 8:30 pagi–5:00 petang; Selasa tutup; Rabu, Khamis dan Jumaat 8:30 pagi–5:30 petang; Sabtu 8:00 pagi–5:00 petang; Ahad 8:30 pagi–3:00 petang.</div></details>
+        <details class="bg-white border border-purple/10"><summary class="cursor-pointer p-5 sm:p-6 flex justify-between gap-4 font-semibold"><span>Bagaimana proses tempahan?</span><i class="faq-chevron fas fa-chevron-down text-xs mt-1"></i></summary><div class="px-5 sm:px-6 pb-6 text-sm text-purple/70 leading-6">Proses ringkas: WhatsApp/enquiry → bincang design & harga → ukuran/fitting → proses jahitan → fitting akhir → siap & serahan.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="page-contact" class="page-view">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
+    <div class="text-center max-w-2xl mx-auto"><p class="text-gold uppercase tracking-[.24em] text-[10px] font-bold">Hubungi</p><h1 class="font-serif text-4xl sm:text-5xl mt-3">Temujanji & Maklumat Kedai</h1><p class="text-purple/65 text-sm leading-7 mt-4">Pilih slot fitting, simpan pada Google Calendar anda dan sahkan dengan D’Anjung Tailor’s melalui WhatsApp.</p></div>
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mt-12 items-start">
+      <div class="space-y-6">
+        <div class="bg-white p-7 sm:p-8 border border-purple/10 shadow-soft"><img src="assets/web/contact_location.webp" alt="Lokasi D'Anjung Tailor's di Taman Tasik Permai, Sibu" class="w-full h-48 sm:h-56 object-cover object-center mb-6 sm:mb-7"><h2 class="font-serif text-2xl">Maklumat Hubungan</h2><div class="mt-6 space-y-5 text-sm">
+          <div class="flex gap-4"><i class="fas fa-map-marker-alt text-gold mt-1"></i><div><b>Alamat Kedai</b><p class="text-purple/65 leading-6 mt-1">Dalam Taman Tasik Permai berhadapan Masjid Sibu,<br>Jalan Permai, Pekan Sibu, 96000 Sibu, Sarawak</p><a href="https://maps.app.goo.gl/7KiLHNazR8wfKvzn7" target="_blank" rel="noopener" class="inline-block mt-2 font-semibold underline">Buka Google Maps</a></div></div>
+          <div class="flex gap-4"><i class="fab fa-whatsapp text-green-600 mt-1"></i><div><b>Telefon / WhatsApp</b><p><a href="https://wa.me/60167173657" target="_blank" rel="noopener" class="hover:underline">016 717 3657</a></p></div></div>
+          <div class="flex gap-4"><i class="fas fa-envelope text-gold mt-1"></i><div><b>E-mel</b><p><a href="mailto:adilashahip666@gmail.com" class="hover:underline break-all">adilashahip666@gmail.com</a></p></div></div>
+          <div class="flex gap-4"><i class="fab fa-facebook text-blue-600 mt-1"></i><div><b>Facebook</b><p><a href="https://web.facebook.com/TailorSibu/?_rdc=1&_rdr#" target="_blank" rel="noopener" class="hover:underline">D’Anjung Tailor’s</a></p></div></div>
+        </div></div>
+        <div class="bg-purple text-cream p-7 sm:p-8"><h2 class="font-serif text-2xl text-gold">Waktu Operasi</h2><div class="mt-4 text-sm divide-y divide-cream/10"><div class="py-2.5 flex justify-between"><span>Isnin</span><b>8:30 am – 5:00 pm</b></div><div class="py-2.5 flex justify-between text-red-300"><span>Selasa</span><b>Tutup</b></div><div class="py-2.5 flex justify-between"><span>Rabu</span><b>8:30 am – 5:30 pm</b></div><div class="py-2.5 flex justify-between"><span>Khamis</span><b>8:30 am – 5:30 pm</b></div><div class="py-2.5 flex justify-between"><span>Jumaat</span><b>8:30 am – 5:30 pm</b></div><div class="py-2.5 flex justify-between"><span>Sabtu</span><b>8:00 am – 5:00 pm</b></div><div class="py-2.5 flex justify-between"><span>Ahad</span><b>8:30 am – 3:00 pm</b></div></div></div>
+      </div>
+      <div class="bg-white p-7 sm:p-8 border border-purple/10 shadow-soft lg:sticky lg:top-28">
+        <p class="text-gold uppercase tracking-[.22em] text-[10px] font-bold">Google Calendar</p><h2 class="font-serif text-2xl sm:text-3xl mt-2">Pilih Temujanji Fitting</h2><p class="text-sm text-purple/60 leading-6 mt-3">Borang ini menyediakan acara Google Calendar yang telah diisi. Selepas itu, sahkan slot dengan kami melalui WhatsApp.</p>
+        <form id="booking-form" class="mt-7 space-y-4 text-sm" onsubmit="prepareBooking(event)">
+          <div><label for="form-name" class="block font-semibold mb-1.5">Nama Pelanggan *</label><input id="form-name" required type="text" placeholder="Contoh: Puan Maria" class="w-full border border-purple/15 bg-cream-soft px-4 py-3.5 focus:outline-none focus:border-purple"></div>
+          <div><label for="form-service" class="block font-semibold mb-1.5">Jenis Perkhidmatan *</label><select id="form-service" class="w-full border border-purple/15 bg-cream-soft px-4 py-3.5 focus:outline-none focus:border-purple"><option>Tempahan Baju Kurung / Kebaya</option><option>Tempahan Baju Melayu / Kemeja</option><option>Alteration Seluar / Baju</option><option>Temujanji Fitting Kedai</option><option>Lain-lain Pertanyaan</option></select></div>
+          <div><label for="form-date" class="block font-semibold mb-1.5">Tarikh & Masa *</label><input id="form-date" required type="datetime-local" class="w-full border border-purple/15 bg-cream-soft px-4 py-3.5 focus:outline-none focus:border-purple"></div>
+          <div><label for="form-message" class="block font-semibold mb-1.5">Nota Rekaan / Extra</label><textarea id="form-message" rows="3" placeholder="Maklumat fabrik, jenis alteration atau rekaan..." class="w-full border border-purple/15 bg-cream-soft px-4 py-3.5 focus:outline-none focus:border-purple"></textarea></div>
+          <button class="w-full bg-purple text-cream py-4 font-bold hover:bg-purple-light transition"><i class="far fa-calendar-check text-gold mr-2"></i>Sediakan Temujanji</button>
+        </form>
+        <div id="booking-actions" class="hidden mt-6 border-t border-purple/10 pt-6"><p class="text-sm font-semibold mb-3">Temujanji anda telah disediakan. Lengkapkan dua langkah ini:</p><div class="grid sm:grid-cols-2 gap-3"><a id="calendar-link" href="#" target="_blank" rel="noopener" class="bg-purple text-cream text-center py-3.5 px-4 text-xs font-bold uppercase tracking-wide"><i class="fab fa-google mr-2"></i>Google Calendar</a><a id="whatsapp-link" href="#" target="_blank" rel="noopener" class="bg-green-600 text-white text-center py-3.5 px-4 text-xs font-bold uppercase tracking-wide"><i class="fab fa-whatsapp mr-2"></i>Sahkan WhatsApp</a></div><p class="text-[11px] text-purple/50 leading-5 mt-3">Nota: Google Calendar menyimpan acara pada kalendar pelanggan. Pengesahan slot dengan kedai dibuat melalui WhatsApp.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<a href="https://wa.me/60167173657" target="_blank" rel="noopener" aria-label="WhatsApp D'Anjung Tailor's" class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl shadow-xl hover:scale-105 transition"><i class="fab fa-whatsapp"></i></a>
+<footer class="bg-purple-dark text-cream py-11 border-t border-cream/10"><div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm"><div><div class="flex items-center gap-3"><img src="assets/web/logo.webp" alt="Logo" class="w-10 h-10 rounded-full"><span class="font-serif text-lg text-gold">D’Anjung Tailor’s</span></div><p class="text-cream/55 text-xs leading-6 mt-3 max-w-sm">Perkhidmatan jahitan yang mengutamakan kualiti, kekemasan dan kepuasan pelanggan di Sibu, Sarawak.</p></div><div><b class="text-gold text-[10px] uppercase tracking-widest">Pautan Pantas</b><div class="mt-3 grid gap-1.5 text-xs text-cream/65"><a href="#" onclick="switchPage('services');return false">Perkhidmatan & Harga</a><a href="#" onclick="switchPage('gallery');return false">Galeri & FAQ</a><a href="#" onclick="switchPage('contact');return false">Temujanji</a></div></div><div><b class="text-gold text-[10px] uppercase tracking-widest">Hubungi</b><div class="mt-3 text-xs text-cream/65 space-y-1.5"><p>WhatsApp: 016 717 3657</p><p>E-mel: adilashahip666@gmail.com</p><p>Lokasi: Taman Tasik Permai, Sibu</p></div></div></div><div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-cream/10 text-center text-[11px] text-cream/35">© 2026 D'Anjung Tailor's Enterprise. Hak Cipta Terpelihara.</div></footer>
+
+<script>
+function switchPage(pageId){
+  document.querySelectorAll('.page-view').forEach(el=>el.classList.remove('active'));
+  const target=document.getElementById('page-'+pageId); if(target) target.classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(el=>{el.classList.toggle('active',el.dataset.page===pageId);el.classList.toggle('text-cream/75',el.dataset.page!==pageId)});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleMobileMenu(){document.getElementById('mobile-menu').classList.toggle('hidden')}
+function pad(n){return String(n).padStart(2,'0')}
+function toGoogleDate(d){return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'T'+pad(d.getHours())+pad(d.getMinutes())+'00'}
+function prepareBooking(e){
+  e.preventDefault();
+  const name=document.getElementById('form-name').value.trim();
+  const service=document.getElementById('form-service').value;
+  const dateValue=document.getElementById('form-date').value;
+  const message=document.getElementById('form-message').value.trim();
+  const start=new Date(dateValue); const end=new Date(start.getTime()+45*60*1000);
+  const location="Dalam Taman Tasik Permai berhadapan Masjid Sibu, Jalan Permai, Pekan Sibu, 96000 Sibu, Sarawak";
+  const details=`Nama: ${name}\nServis: ${service}${message?`\nNota: ${message}`:''}\n\nSila sahkan slot dengan D'Anjung Tailor's melalui WhatsApp.`;
+  const cal=new URL('https://calendar.google.com/calendar/render');
+  cal.searchParams.set('action','TEMPLATE'); cal.searchParams.set('text',`Fitting D'Anjung Tailor's – ${service}`); cal.searchParams.set('dates',`${toGoogleDate(start)}/${toGoogleDate(end)}`); cal.searchParams.set('details',details); cal.searchParams.set('location',location);
+  const formatted=start.toLocaleString('ms-MY',{dateStyle:'medium',timeStyle:'short'});
+  const wa=`Halo D'Anjung Tailor's,\n\nSaya ${name} ingin membuat temujanji melalui website:\n• Servis: ${service}\n• Tarikh/Masa: ${formatted}${message?`\n• Nota: ${message}`:''}\n\nMohon sahkan slot ini. Terima kasih.`;
+  document.getElementById('calendar-link').href=cal.toString();
+  document.getElementById('whatsapp-link').href='https://wa.me/60167173657?text='+encodeURIComponent(wa);
+  document.getElementById('booking-actions').classList.remove('hidden');
+  document.getElementById('booking-actions').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+(function(){const input=document.getElementById('form-date');const now=new Date();now.setMinutes(now.getMinutes()-now.getTimezoneOffset());input.min=now.toISOString().slice(0,16)})();
+</script>
+</body>
+</html>
